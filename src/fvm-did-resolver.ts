@@ -2,7 +2,7 @@ import * as log4js from "log4js";
 import * as networkConfiguration from "./configuration.json";
 import { ethers } from "ethers";
 import { DIDDocument, DIDResolutionResult, DIDResolver, ParsedDID, Resolver } from 'did-resolver';
-const DidRegistryContract = require("@ayanworks/fvm-did-registry-contract");
+const DidRegistryContract = require("fvm-did-registry-contract");
 
 
 const logger = log4js.getLogger();
@@ -23,7 +23,7 @@ export function getResolver (): Record<string, DIDResolver> {
                   let url: string;
                   let contractAddress: string;
                   const didWithTestnet: string = await splitfvmDid(did);
-      
+
                   if (
                         (did &&
                               didWithTestnet === "testnet" &&
@@ -42,7 +42,7 @@ export function getResolver (): Record<string, DIDResolver> {
                                     url = `${networkConfiguration[1].mainnet?.URL}`;
                                     contractAddress = `${networkConfiguration[1].mainnet?.CONTRACT_ADDRESS}`;
                               }
-      
+
                               const provider: ethers.providers.JsonRpcProvider = new ethers.providers.JsonRpcProvider(
                                     url
                               );
@@ -51,21 +51,21 @@ export function getResolver (): Record<string, DIDResolver> {
                                     DidRegistryContract.abi,
                                     provider
                               );
-      
+
                               const didAddress: string =
                                     didWithTestnet === "testnet" ? did.split(":")[3] : didWithTestnet;
-      
+
                               // Calling smart contract with getting DID Document
                               let didDocument: any = await registry.functions
                                     .getDIDDoc(didAddress)
                                     .then((resValue: any) => {
                                           return resValue;
                                     });
-      
+
                               logger.debug(
                                     `[resolveDID] readDIDDoc - ${JSON.stringify(didDocument)} \n\n\n`
                               );
-      
+
                               if (didDocument && !didDocument.includes("")) {
                                     return{
                                           didDocument,
@@ -94,7 +94,7 @@ export function getResolver (): Record<string, DIDResolver> {
       }
       return { fvm: resolve };
 }
-    
+
 
 /**
  * Split fvm DID.
