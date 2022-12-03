@@ -1,5 +1,5 @@
 {
-  "name": "@ayanworks/fvm-did-resolver",
+  "name": "@amany9000/fvm-did-resolver",
   "version": "0.0.13",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,8 +13,8 @@
     "test": "jest",
     "lint": "tslint -p tsconfig.json"
   },
-  "author": "Ajay Jadhav <ajay@ayanworks.com>",
-  "contributors": ["Anusha Garg <anusha.garg@ayanworks.com>, Shashank Kulkarni <shashank.kulkarni@ayanworks.com>"],
+  "author": "Aman Yadav <amanyadavlko2502@gmail.com>",
+  "contributors": ["Pushkar Patel <thepushkarp@gmail.com>"],
   "license": "MIT",
   "dependencies": {
     "@ayanworks/fvm-did-registry-contract": "2.0.0",
@@ -50,13 +50,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/fvm-did/fvm-did-resolver.git"
+    "url": "git+https://github.com/amany9000/fvm-did-resolver.git"
   },
   "keywords": [
     "did-method"
   ],
   "bugs": {
-    "url": "https://gitlab.com/fvm-did/fvm-did-resolver/issues"
+    "url": "https://github.com/amany9000/fvm-did-resolver/issues"
   },
-  "homepage": "https://gitlab.com/fvm-did/fvm-did-resolver#readme"
+  "homepage": "https://github.com/amany9000/fvm-did-resolver#readme"
 }
