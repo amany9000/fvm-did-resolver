@@ -3,11 +3,5 @@
             "URL": "https://wallaby.node.glif.io/rpc/v0",
             "CONTRACT_ADDRESS": "0xD3c51785968E4Cdb55726c85194eB97105b99b80"
       }
-},
-{
-      "mainnet": {
-            "URL": "https://polygon-rpc.com",
-            "CONTRACT_ADDRESS": "0x98bF771e1E93Db917A89986bcdaBa3b43643F367"
-      }
 }
 ]

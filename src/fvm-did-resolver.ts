@@ -39,8 +39,8 @@ export function getResolver (): Record<string, DIDResolver> {
                                     url = `${networkConfiguration[0].testnet?.URL}`;
                                     contractAddress = `${networkConfiguration[0].testnet?.CONTRACT_ADDRESS}`;
                               } else {
-                                    url = `${networkConfiguration[1].mainnet?.URL}`;
-                                    contractAddress = `${networkConfiguration[1].mainnet?.CONTRACT_ADDRESS}`;
+                                    errorMessage = `Wrong network enter!`;
+                                    throw new Error(errorMessage);
                               }
 
                               const provider: ethers.providers.JsonRpcProvider = new ethers.providers.JsonRpcProvider(
