@@ -1,1 +1,1 @@
-export * from "./polygon-did-resolver";
+export * from "./fvm-did-resolver";

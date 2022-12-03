@@ -1,5 +1,5 @@
 {
-  "name": "@ayanworks/polygon-did-resolver",
+  "name": "@ayanworks/fvm-did-resolver",
   "version": "0.0.13",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "scripts": {
     "prestart": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "start": "node ./dist/polygon-did-resolver.js",
+    "start": "node ./dist/fvm-did-resolver.js",
     "test": "jest",
     "lint": "tslint -p tsconfig.json"
   },
@@ -17,7 +17,7 @@
   "contributors": ["Anusha Garg <anusha.garg@ayanworks.com>, Shashank Kulkarni <shashank.kulkarni@ayanworks.com>"],
   "license": "MIT",
   "dependencies": {
-    "@ayanworks/polygon-did-registry-contract": "2.0.0",
+    "@ayanworks/fvm-did-registry-contract": "2.0.0",
     "@metamask/detect-provider": "^1.2.0",
     "buffer": "^6.0.3",
     "did-jwt": "^5.1.0",
@@ -44,19 +44,19 @@
     "jest": "^26.6.3",
     "ts-jest": "^26.5.5"
   },
-  "description": "The polygon resolver library is used for resolving DID’s in Polygon Method Space. The module is supposed to be used as an integeration to polygon library.",
+  "description": "The fvm resolver library is used for resolving DID’s in fvm Method Space. The module is supposed to be used as an integeration to fvm library.",
   "directories": {
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/polygon-did/polygon-did-resolver.git"
+    "url": "git+https://gitlab.com/fvm-did/fvm-did-resolver.git"
   },
   "keywords": [
     "did-method"
   ],
   "bugs": {
-    "url": "https://gitlab.com/polygon-did/polygon-did-resolver/issues"
+    "url": "https://gitlab.com/fvm-did/fvm-did-resolver/issues"
   },
-  "homepage": "https://gitlab.com/polygon-did/polygon-did-resolver#readme"
+  "homepage": "https://gitlab.com/fvm-did/fvm-did-resolver#readme"
 }

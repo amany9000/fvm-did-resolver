@@ -2,7 +2,7 @@ import * as log4js from "log4js";
 import * as networkConfiguration from "./configuration.json";
 import { ethers } from "ethers";
 import { DIDDocument, DIDResolutionResult, DIDResolver, ParsedDID, Resolver } from 'did-resolver';
-const DidRegistryContract = require("@ayanworks/polygon-did-registry-contract");
+const DidRegistryContract = require("@ayanworks/fvm-did-registry-contract");
 
 
 const logger = log4js.getLogger();
@@ -22,18 +22,18 @@ export function getResolver (): Record<string, DIDResolver> {
                   let errorMessage: string;
                   let url: string;
                   let contractAddress: string;
-                  const didWithTestnet: string = await splitPolygonDid(did);
+                  const didWithTestnet: string = await splitfvmDid(did);
       
                   if (
                         (did &&
                               didWithTestnet === "testnet" &&
-                              did.match(/^did:polygon:testnet:0x[0-9a-fA-F]{40}$/)) ||
-                        (did && did.match(/^did:polygon:0x[0-9a-fA-F]{40}$/))
+                              did.match(/^did:fvm:testnet:0x[0-9a-fA-F]{40}$/)) ||
+                        (did && did.match(/^did:fvm:0x[0-9a-fA-F]{40}$/))
                   ) {
                         if (
                               (didWithTestnet === "testnet" &&
-                                    did.match(/^did:polygon:testnet:\w{0,42}$/)) ||
-                              did.match(/^did:polygon:\w{0,42}$/)
+                                    did.match(/^did:fvm:testnet:\w{0,42}$/)) ||
+                              did.match(/^did:fvm:\w{0,42}$/)
                         ) {
                               if (did && didWithTestnet === "testnet") {
                                     url = `${networkConfiguration[0].testnet?.URL}`;
@@ -92,16 +92,16 @@ export function getResolver (): Record<string, DIDResolver> {
                   throw error;
             }
       }
-      return { polygon: resolve };
+      return { fvm: resolve };
 }
     
 
 /**
- * Split polygon DID.
+ * Split fvm DID.
  * @param did
- * @returns Returns Split data value to polygon DID.
+ * @returns Returns Split data value to fvm DID.
  */
-async function splitPolygonDid(did: string): Promise<string> {
+async function splitfvmDid(did: string): Promise<string> {
       const splitDidValue: string = did.split(":")[2];
       return splitDidValue;
 }

@@ -1,6 +1,6 @@
-# Polygon DID Resolver
+# fvm DID Resolver
 
-The polygon resolver library is used for resolving DID’s in Polygon Method Space. The module is supposed to be used as an integration to polygon library.
+The fvm resolver library is used for resolving DID’s in fvm Method Space. The module is supposed to be used as an integration to fvm library.
 
 ## Install
 
@@ -13,7 +13,7 @@ npm install
 In combination with the DID-Resolver:
 
 ```js
-import { resolveDID } from "polygon-did-resolver";
+import { resolveDID } from "fvm-did-resolver";
 const didDocument = await resolveDID(did);
 ```
 The function returns a DID Document.

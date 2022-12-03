@@ -1,5 +1,5 @@
 import { testDid, privateKey, url, contractAddress } from "./test.data";
-import * as didPolygon from '../src/polygon-did-resolver';
+import * as didfvm from '../src/fvm-did-resolver';
 import * as didResolvers from "did-resolver";
 
 jest.setTimeout(30000);
@@ -10,7 +10,7 @@ beforeAll(async () => {
     {
         resolver = new didResolvers.Resolver(
             {
-                ...didPolygon.getResolver(),
+                ...didfvm.getResolver(),
             },
 
             { cache: true }
@@ -25,13 +25,13 @@ describe("test resolver function", () => {
 
 
 
-    it('should be polygon DID for resolve DID', async () => {
+    it('should be fvm DID for resolve DID', async () => {
         if (testDid && testDid.split(':')[2] === 'testnet') {
 
             await expect(testDid).toBeDefined();
             await expect(testDid).not.toBeNull();
             await expect(testDid).not.toBe('');
-            await expect(testDid.slice(0, 19)).toMatch('did:polygon:testnet');
+            await expect(testDid.slice(0, 19)).toMatch('did:fvm:testnet');
             await expect(testDid.slice(20, 22)).toMatch('0x');
             await expect(testDid.split(":")[3].length).toBe(42);
         } else {
@@ -39,7 +39,7 @@ describe("test resolver function", () => {
             await expect(testDid).toBeDefined();
             await expect(testDid).not.toBeNull();
             await expect(testDid).not.toBe('');
-            await expect(testDid.slice(0, 12)).toMatch('did:polygon');
+            await expect(testDid.slice(0, 12)).toMatch('did:fvm');
             await expect(testDid.slice(12, 14)).toMatch('0x');
             await expect(testDid.split(":")[2].length).toBe(42);
         }
