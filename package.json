@@ -1,6 +1,6 @@
 {
   "name": "fvm-did-resolver",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "dist/index.js",
   "files": [
     "/dist"
@@ -13,7 +13,9 @@
     "lint": "tslint -p tsconfig.json"
   },
   "author": "Aman Yadav <amanyadavlko2502@gmail.com>",
-  "contributors": ["Pushkar Patel <thepushkarp@gmail.com>"],
+  "contributors": [
+    "Pushkar Patel <thepushkarp@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "fvm-did-registry-contract": "2.0.0",
