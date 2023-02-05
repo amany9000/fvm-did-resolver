@@ -29,7 +29,6 @@
         "ethjs-query": "^0.3.8",
         "ethr-did-resolver": "^3.0.3",
         "ganache-cli": "^6.12.2",
-        "log4js": "^6.3.0",
         "prettier": "^2.2.1",
         "truffle-contract": "^4.0.31",
         "typescript": "^4.2.4",
