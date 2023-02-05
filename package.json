@@ -1,6 +1,6 @@
 {
     "name": "fvm-did-resolver",
-    "version": "0.0.19",
+    "version": "0.0.21",
     "main": "dist/index.js",
     "scripts": {
         "prestart": "tsc",
